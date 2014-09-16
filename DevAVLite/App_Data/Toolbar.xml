@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Pages>
+  <Products>
+    <Item Name="New" Text="New" Tooltip="New product" />
+    <Item Name="Delete" Text="Delete" Tooltip="Delete product" />
+    <Item Name="ColumnsCustomization" Text="Customize columns" Tooltip="Customize columns" />
+  </Products>
+  <Employees>
+    <Item Name="New Employee" Text="New" Tooltip="New product" />
+    <Item Name="ColumnsCustomization" Text="Customize columns" Tooltip="Customize columns" />
+  </Employees>
+  <AnyOtherPage>
+    
+  </AnyOtherPage>
+</Pages>

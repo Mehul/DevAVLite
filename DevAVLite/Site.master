@@ -1,0 +1,127 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="Site" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>DevAV Lite - DevExpress ASP.NET RoadShow 2014 Demo</title>
+    <link href="Content/Styles.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <dx:ASPxSplitter ID="ASPxSplitter1" runat="server" AllowResize="False" CssClass="mainSplitter" FullscreenMode="True" Height="100%" Orientation="Vertical" Width="100%" SeparatorVisible="False">
+                <Panes>
+                    <dx:SplitterPane>
+                        <Panes>
+                            <dx:SplitterPane Name="logoPane" Size="210px">
+                                <PaneStyle CssClass="logoPane">
+                                </PaneStyle>
+                                <ContentCollection>
+                                    <dx:SplitterContentControl runat="server">
+                                        <dx:ASPxImage ID="ASPxImage1" runat="server" ImageUrl="~/Content/MainLogo.png" ShowLoadingImage="True">
+                                        </dx:ASPxImage>
+                                        <dx:ASPxMenu ID="NavigationMenu" runat="server" CssClass="navigationMenu">
+                                            <Items>
+                                                <dx:MenuItem Name="RootItem" Text="">
+                                                    <Items>
+                                                        <dx:MenuItem NavigateUrl="~/Products.aspx" Text="Products">
+                                                        </dx:MenuItem>
+                                                        <dx:MenuItem NavigateUrl="~/Employees.aspx" Text="Employees">
+                                                        </dx:MenuItem>
+                                                    </Items>
+                                                </dx:MenuItem>
+                                            </Items>
+                                        </dx:ASPxMenu>
+                                        <dx:ASPxNavBar ID="ASPxNavBar1" runat="server" Width="100%">
+                                            <Groups>
+                                                <dx:NavBarGroup Text="Favorites">
+                                                    <Items>
+                                                        <dx:NavBarItem Text="All">
+                                                        </dx:NavBarItem>
+                                                        <dx:NavBarItem Text="Video Players">
+                                                        </dx:NavBarItem>
+                                                        <dx:NavBarItem Text="LCD TVs">
+                                                        </dx:NavBarItem>
+                                                    </Items>
+                                                </dx:NavBarGroup>
+                                                <dx:NavBarGroup Text="Custom">
+                                                    <Items>
+                                                        <dx:NavBarItem Text="Plasma &amp; LCD TVs">
+                                                        </dx:NavBarItem>
+                                                    </Items>
+                                                </dx:NavBarGroup>
+                                            </Groups>
+                                        </dx:ASPxNavBar>
+                                    </dx:SplitterContentControl>
+                                </ContentCollection>
+                            </dx:SplitterPane>
+                            <dx:SplitterPane MinSize="300px">
+                                <Panes>
+                                    <dx:SplitterPane Name="toolbarPane" Size="60px">
+                                        <PaneStyle CssClass="toolbarPane">
+                                        </PaneStyle>
+                                        <ContentCollection>
+                                            <dx:SplitterContentControl runat="server">
+                                                <dx:ASPxMenu ID="ASPxMenu1" runat="server" DataSourceID="XmlDataSource1" ShowAsToolbar="True">
+                                                </dx:ASPxMenu>
+                                            </dx:SplitterContentControl>
+                                        </ContentCollection>
+                                    </dx:SplitterPane>
+                                    <dx:SplitterPane Name="mainContentPane">
+                                        <PaneStyle CssClass="mainContentPane">
+                                        </PaneStyle>
+                                        <ContentCollection>
+                                            <dx:SplitterContentControl runat="server">
+                                                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                                </asp:ContentPlaceHolder>
+                                            </dx:SplitterContentControl>
+                                        </ContentCollection>
+                                    </dx:SplitterPane>
+                                </Panes>
+                                <ContentCollection>
+                                    <dx:SplitterContentControl runat="server">
+                                    </dx:SplitterContentControl>
+                                </ContentCollection>
+                            </dx:SplitterPane>
+                        </Panes>
+                        <ContentCollection>
+                            <dx:SplitterContentControl runat="server"></dx:SplitterContentControl>
+                        </ContentCollection>
+                    </dx:SplitterPane>
+                    <dx:SplitterPane Name="footerPane" Size="90px">
+                        <Panes>
+                            <dx:SplitterPane Name="footerImagePane" Size="210px">
+                                <PaneStyle CssClass="footerImagePane">
+                                </PaneStyle>
+                                <ContentCollection>
+                                    <dx:SplitterContentControl runat="server">
+                                        <dx:ASPxImage ID="ASPxImage2" runat="server" ImageUrl="~/Content/FooterLogo.png" ShowLoadingImage="True">
+                                        </dx:ASPxImage>
+                                    </dx:SplitterContentControl>
+                                </ContentCollection>
+                            </dx:SplitterPane>
+                            <dx:SplitterPane Name="footerTextPane">
+                                <PaneStyle CssClass="footerTextPane">
+                                </PaneStyle>
+                                <ContentCollection>
+                                    <dx:SplitterContentControl runat="server">
+                                        Powered by DevExpress ASP.NET Controls<br />
+                                        <a href="https://go.devexpress.com/Demo_2013_DownloadTrial.aspx">Download your free 30-day trial</a>
+                                    </dx:SplitterContentControl>
+                                </ContentCollection>
+                            </dx:SplitterPane>
+                        </Panes>
+                        <ContentCollection>
+                            <dx:SplitterContentControl runat="server"></dx:SplitterContentControl>
+                        </ContentCollection>
+                    </dx:SplitterPane>
+                </Panes>
+            </dx:ASPxSplitter>
+        </div>
+        <asp:XmlDataSource ID="XmlDataSource1" runat="server" DataFile="~/App_Data/Toolbar.xml" OnInit="XmlDataSource1_Init"></asp:XmlDataSource>
+    </form>
+</body>
+</html>
